@@ -1,0 +1,35 @@
+.list-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1.5rem 2rem;
+  width: 75vw;
+}
+
+.list-row:hover {
+  background-color: var(--darkgrey);
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 0 1rem;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.list-row td {
+  text-align: center;
+  width: 16%;
+}
+
+.td-right-align {
+  text-align: right;
+  font-weight: normal;
+}
+
+.td-center-align {
+  text-align: center;
+}
+.td-image {
+  width: 3rem !important;
+  margin-right: 1.5rem;
+}

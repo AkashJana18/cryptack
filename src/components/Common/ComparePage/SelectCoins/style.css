@@ -1,0 +1,7 @@
+.select-coins {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: 1rem;
+}

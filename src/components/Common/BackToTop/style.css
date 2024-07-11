@@ -1,0 +1,14 @@
+#myBtn{
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid  var(--blue);
+  margin: 1.5rem;
+  cursor: pointer;
+}
