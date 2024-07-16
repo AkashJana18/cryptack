@@ -50,7 +50,7 @@
   font-weight: 600;
   color: var(--green);
   font-size: .8rem;
-  min-width: 64px;
+
 }
 
 .price-chip:hover, .icon-chip:hover {
@@ -94,7 +94,7 @@
 }
 
 .total-volume {
-  color: var(--grey);
+  color: var(--white);
   font-size: .8rem;
   font-weight: 500;
 }

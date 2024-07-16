@@ -40,11 +40,11 @@ export default function Tabs({ coins }) {
           </div>
         </TabPanel>
         <TabPanel value="list">
-          <table className="list-table">
+          <div className="list-table">
             {coins.map((coin, i) => {
               return <List coin={coin} key={i} />;
             })}
-          </table>
+          </div>
         </TabPanel>
       </TabContext>
     </div>

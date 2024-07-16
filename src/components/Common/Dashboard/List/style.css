@@ -1,26 +1,28 @@
 .list-row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
-  margin: 1.5rem 2rem;
-  width: 75vw;
+  width: 80vw;
+  padding: 1rem;
+
 }
 
 .list-row:hover {
   background-color: var(--darkgrey);
   border-radius: 1rem;
-  margin: 1rem;
-  padding: 0 1rem;
   transition: all 0.3s;
   cursor: pointer;
+  padding: 1rem;
+
+}
+.td-image {
+  width: 10% !important;
 }
 
-.list-row td {
-  text-align: center;
-  width: 16%;
-}
 
+.mobile {
+  display: none;
+}
 .td-right-align {
   text-align: right;
   font-weight: normal;
@@ -32,4 +34,93 @@
 .td-image {
   width: 3rem !important;
   margin-right: 1.5rem;
+}
+/* Changes */
+
+.current-price {
+  text-align: right !important;
+
+}
+
+.total-volume-list{
+  text-align: right !important;
+  color: var(--white) !important ;
+}
+
+.td-info {
+  text-align: left;
+  width: 10% !important;
+}
+
+.list-row td {
+  width: 20%;
+  align-items: center;
+}
+/* .mobile {
+  display: none;
+} */
+
+@media only screen and (max-width: 900px) {
+  .td-icon{
+    display: none;
+  }
+.coin-price  {
+  font-size: .7rem ! important;
+  padding: 0.35rem !important;
+}
+
+.price-chip {
+  font-size: .7rem;
+  padding: 0.35rem .75rem;
+}
+  .list-row {
+    padding: 0.5rem;
+  }
+  .list-row:hover {
+    padding: 0.5rem;
+  }
+  .list-row td {
+    font-size: 0.7rem !important;
+  }
+
+  .total-volume-list {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+
+  .current-price {
+    text-align: center !important;
+  }
+
+
+}
+@media only screen and (max-width: 600px) {
+  .total-volume-list,
+  .td-icon {
+    display: none !important;
+  }
+
+  .price-chip {
+    font-size: .6rem;
+    padding: 0.35rem;
+  }
+  .mobile {
+    display: block !important;
+    text-align: left !important;
+  }
+  .list-row td,
+  .td-p {
+    font-size: 0.6rem !important;
+  }
+
+  .td-info {
+    width: 4rem !important;
+  }
+
+  .coin-image-td {
+    height: 2rem !important;
+    width: 2rem !important;
+  }
 }

@@ -7,6 +7,7 @@ import Loader from "../components/Common/Loader";
 
 import BackToTop from "../components/Common/BackToTop";
 import { get100Coins } from "../functions/get100Coins";
+import Footer from "../components/Common/Footer";
 
 const DashboardPage = () => {
   const [coins, setCoins] = useState([]);
@@ -35,14 +36,14 @@ const DashboardPage = () => {
     getData();
   }, []);
 
-  const getData = async ()=>{
+  const getData = async () => {
     const myCoins = await get100Coins();
-    if(myCoins){
+    if (myCoins) {
       setCoins(myCoins);
-      setPaginatedCoins(myCoins.slice(0,10));
+      setPaginatedCoins(myCoins.slice(0, 10));
       setIsLoading(false);
     }
-  }
+  };
   return (
     <>
       <Header />
@@ -58,6 +59,7 @@ const DashboardPage = () => {
           )}
         </div>
       )}
+      <Footer />
     </>
   );
 };

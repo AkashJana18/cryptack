@@ -2,7 +2,7 @@
   "name": "cryptack",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https:/api.coingecko.com/api/v3/",
+  "proxy": "https://api.coingecko.com/api/v3/",
   "dependencies": {
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.16.0",

@@ -11,6 +11,7 @@ import LineChart from "../components/Coin/CoinChart";
 import SelectDays from "../components/Coin/SelectDays";
 import { settingChartData } from "../functions/settingChartData";
 import TogglePriceType from "../components/Coin/PriceType";
+import Footer from "../components/Common/Footer";
 
 const CoinPage = () => {
   const { id } = useParams();
@@ -80,6 +81,7 @@ const CoinPage = () => {
           </div>
         </>
       )}
+      <Footer />
     </div>
   );
 };

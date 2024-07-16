@@ -11,6 +11,7 @@ import CoinInfo from "../components/Coin/CoinInfo";
 import { settingChartData } from "../functions/settingChartData";
 import LineChart from "../components/Coin/CoinChart";
 import TogglePriceType from "../components/Coin/PriceType";
+import Footer from "../components/Common/Footer";
 
 const Compare = () => {
   const [crypto1, setCrypto1] = useState("bitcoin");
@@ -131,6 +132,7 @@ const Compare = () => {
           </div>
         </>
       )}
+      <Footer />
     </div>
   );
 };
