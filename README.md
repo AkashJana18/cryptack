@@ -1,3 +1,57 @@
+
+#  Cryptack - Only CryptoTracker you need!
+
+## Description
+CryptoTracker is the tracker you always needed. Compare different cryptocurrencies, view their graphs—prices, total volumes, market cap, etc. Search from the top 100 cryptocurrencies in real-time and add them to your watchlist as well.
+
+## Objective
+To build a responsive and live crypto tracker using React JS.
+
+## Technologies Used
+1. **React JS** - for frontend
+2. **Material UI** - for components
+3. **Chart.js** - for different graphs
+4. **Axios** - to make API calls
+5. **React Router** - for routing
+6. **Coingecko API** - to fetch coin data
+7. **Framer Motion** - for animations
+
+## Project Context
+The entire world is moving towards Web3 and crypto. Staying up to date with all cryptocurrencies can be challenging. Use CryptoTracker to analyze, compare, and learn about different cryptocurrencies, all in one place. This tool is designed to help users make informed decisions by providing real-time data and interactive features.
+
+## Project Stages
+1. **Basic React Project Setup**
+   - Walkthrough of what we'll be building.
+   - Review Coingecko API documentation.
+2. **Setting Up Folder Structure**
+   - Add global styling, fonts, root variables, etc.
+   - Integrate React Router.
+3. **Making the Header**
+   - Add MUI drawer as the mobile navbar.
+4. **Making Landing Page Components**
+5. **Making the Dashboard Page**
+   - Add MUI tabs to the project.
+6. **Fetching Coin Data**
+   - Call the Coingecko API to fetch coin data.
+7. **Creating Grid and List Views**
+8. **Developing Coin Page**
+9. **Integrating Chart.js**
+   - Add Chart.js to the coin page for visualizations.
+
+## Project Links and References
+- **Project Link**: [CryptoTracker](https://cryptack.netlify.app/)
+- **GitHub Repo**: [CryptoTracker Repository](https://github.com/AkashJana18/cryptack)
+- **Figma**: [Figma Design](https://www.figma.com/design/J1qMb6OQJWumOTLZtTB081/Cryptack?node-id=0-1&t=qv3YfV6MOPc7boNw-1)
+- **Dribbble**: [Dribbble](https://dribbble.com) - for design inspirations
+- **API**: [Coingecko API Documentation](https://www.coingecko.com/en/api/documentation)
+- **Graphs**: [Chart.js Documentation](https://www.chartjs.org/docs/latest/)
+- **Material UI**: [Material UI Documentation](https://mui.com/)
+- **Framer Motion**: [Framer Motion Documentation](https://framer.com)
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
