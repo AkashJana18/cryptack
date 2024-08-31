@@ -77,7 +77,7 @@ git push origin your-branch-name
 - Once your PR is approved, it will be merged into the `main` branch.
 
 ## Reporting Issues
-If you encounter any bugs or have suggestions for improvements, please [open an issue](https://github.com/yourusername/cryptotracker/issues). Be sure to provide as much detail as possible, including steps to reproduce the problem.
+If you encounter any bugs or have suggestions for improvements, please [open an issue](https://github.com/AkashJana18/cryptack/issues). Be sure to provide as much detail as possible, including steps to reproduce the problem.
 
 ## Community
 We value respectful and constructive communication. When interacting with others in the project, please follow our [Code of Conduct](https://github.com/AkashJana18/cryptack/blob/main/CODE_OF_CONDUCT.md).
