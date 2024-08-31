@@ -6,12 +6,13 @@ import DashboardPage from './pages/Dashboard';
 import Compare from './pages/Compare';
 import WatchlistPage from './pages/Watchlist';
 import CoinPage from './pages/Coin';
-import { ThemeProvider } from './context/ThemeContext';
+import { useTheme } from './context/ThemeContext';
 
 function App() {
+  const {darkMode, _} = useTheme();
+  const background = darkMode ? 'App theme-dark' : 'App theme-light';
   return (
-    <div className="App">
-    <ThemeProvider>
+    <div className={background}>
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -21,7 +22,6 @@ function App() {
         <Route path="/watchlist" element={<WatchlistPage />} />
       </Routes>
       </BrowserRouter>
-    </ThemeProvider>
     </div>
   );
 }

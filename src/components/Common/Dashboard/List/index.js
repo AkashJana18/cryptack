@@ -5,7 +5,6 @@ import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDownRounded";
 import { Tooltip } from "@mui/material";
 import { Link } from "react-router-dom";
 import { convertNumber } from "../../../../functions/convertNumber";
-import { motion } from "framer-motion";
 
 const List = ({ coin }) => {
   return (

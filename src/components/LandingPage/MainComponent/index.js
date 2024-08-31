@@ -5,14 +5,18 @@ import iphone from "../../../assets/iphone.png";
 import gradient from "../../../assets/gradient.png";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useTheme } from "../../../context/ThemeContext";
 
 function MainComponent() {
+  const {darkMode} = useTheme();
+
+  const heading1Styles = darkMode ? 'heading1' : 'heading1n heading1-light';
   return (
     <div className="main-flex">
       <div className="left-component">
         <div>
           <motion.h1
-            className="heading1"
+            className={heading1Styles}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}

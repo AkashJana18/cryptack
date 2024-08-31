@@ -4,8 +4,14 @@ import TrendingUpRoundedIcon from "@mui/icons-material/TrendingUpRounded";
 import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDownRounded";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useTheme } from "../../../../context/ThemeContext";
 
 const Grid = ({ coin }) => {
+  const {darkMode, _} = useTheme();
+  const gridStyles = darkMode ? 'grid-container' : 'grid-container grid-container-light'
+  const coinSymbolStyles = darkMode ? 'coin-symbol' : 'coin-symbol coin-symbol-light'
+  const totalVolumeStyles = darkMode ? 'total-volume' : 'total-volume total-volume-light'
+
   return (
     <Link to={`/coin/${coin.id}`}>
       <motion.div
@@ -15,14 +21,14 @@ const Grid = ({ coin }) => {
         transition={{ duration: 0.5, delay: .3 }}
       >
         <div
-          className={`grid-container ${
+          className={`${gridStyles} ${
             coin.price_change_percentage_24h < 0 && "grid-container-red"
           }`}
         >
           <div className="info-flex">
             <img src={coin.image} alt="" className="coin-logo" />
             <div className="name-col">
-              <p className="coin-symbol">{coin.symbol}</p>
+              <p className={coinSymbolStyles}>{coin.symbol}</p>
               <p className="coin-name">{coin.name}</p>
             </div>
           </div>
@@ -59,10 +65,10 @@ const Grid = ({ coin }) => {
             >
               ${coin.current_price.toLocaleString()}
             </h3>
-            <p className="total-volume">
+            <p className={totalVolumeStyles}>
               Total Volume : {coin.total_volume.toLocaleString()}
             </p>
-            <p className="total-volume">
+            <p className={totalVolumeStyles}>
               Market Cap : ${coin.market_cap.toLocaleString()}
             </p>
           </div>
