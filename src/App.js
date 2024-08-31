@@ -6,10 +6,12 @@ import DashboardPage from './pages/Dashboard';
 import Compare from './pages/Compare';
 import WatchlistPage from './pages/Watchlist';
 import CoinPage from './pages/Coin';
+import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
   return (
     <div className="App">
+    <ThemeProvider>
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -19,6 +21,7 @@ function App() {
         <Route path="/watchlist" element={<WatchlistPage />} />
       </Routes>
       </BrowserRouter>
+    </ThemeProvider>
     </div>
   );
 }

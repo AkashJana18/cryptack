@@ -130,3 +130,12 @@
     }
   }
   
+  .dark-mode {
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+  .light-mode {
+    background-color: var(--white);
+    color: var(--black);
+  }
