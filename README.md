@@ -32,14 +32,14 @@ The world is moving towards Web3 and crypto, making it essential to stay updated
 11. **Coin Page**: Integrate Chart.js for coin visualizations.
 
 ## Project Links and References
-- **Project Link**: [Cryptack](#)
-- **GitHub Repo**: [CryptoTracker Repository](#)
-- **Figma**: [Designs](#)
-- **Dribbble**: [Design Inspirations](#)
-- **API Documentation**: [Coingecko API](#)
-- **Chart.js Documentation**: [Chart.js](#)
-- **Material UI Documentation**: [Material UI](#)
-- **Framer Motion Documentation**: [Framer Motion](#)
+- **Project Link**: [Cryptack](https://cryptack.netlify.app/)
+- **GitHub Repo**: [CryptoTracker Repository](https://github.com/AkashJana18/cryptack)
+- **Figma**: [Designs](https://www.figma.com/design/J1qMb6OQJWumOTLZtTB081/Cryptack?node-id=0-1&t=nDbIoU654APvzhgG-1)
+- **Dribbble**: [Design Inspirations](https://www.framer.com/motion/)
+- **API Documentation**: [Coingecko API](https://www.coingecko.com/en/api)
+- **Chart.js Documentation**: [Chart.js](https://www.chartjs.org/docs/latest/)
+- **Material UI Documentation**: [Material UI](https://mui.com/material-ui/)
+- **Framer Motion Documentation**: [Framer Motion](https://www.framer.com/motion/)
 
 ## Getting Started
 ### Prerequisites
