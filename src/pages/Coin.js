@@ -68,10 +68,10 @@ const CoinPage = () => {
         <Loader />
       ) : (
         <>
-          <div className="grey-wrapper">
+          <div style={{"display": "flex", "justifyContent": "center"}}>
             <List coin={coinData} />
           </div>
-          <div className="grey-wrapper">
+          <div style={{"marginLeft": "3rem", "marginRight": "3rem"}}>  
             <SelectDays days={days} handleDaysChange={handleDaysChange} />
             <TogglePriceType priceType={priceType} handlePriceTypeChange={handlePriceTypeChange}/>
             <LineChart chartData={chartData} />

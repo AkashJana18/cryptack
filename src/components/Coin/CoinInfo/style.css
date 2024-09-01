@@ -1,7 +1,27 @@
+.wrapper-dark {
+    padding: 0 40px;
+    margin-top: 10px;
+    border-radius: 20px;
+    background-color: var(--darkgrey);
+    color: white;
+}
+
+.wrapper-light {
+    padding: 0 20px;
+    margin-top: 10px;
+    background-color: var(--white);
+    color: black;
+}
+
 .coin-info-desc a {
     text-decoration: underline !important;
 }
-.coin-info-desc  {
+
+.coin-info-desc-light a {
+    color: black !important;
+}
+
+.coin-info-desc {
     cursor: pointer;
 }
 

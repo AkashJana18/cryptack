@@ -39,7 +39,7 @@ const Compare = () => {
   }, []);
 
   async function getData() {
-    setIsLoading(true);
+    setIsLoading(true); 
     const data1 = await getCoinData(crypto1);
     const data2 = await getCoinData(crypto2);
     if (data1) {
@@ -106,13 +106,21 @@ const Compare = () => {
             />
             <SelectDays days={days} handleDaysChange={handleDaysChange} />
           </div>
-          <div className="grey-wrapper">
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
             <List coin={crypto1Data} />
           </div>
-          <div className="grey-wrapper">
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
             <List coin={crypto2Data} />
           </div>
-          <div className="grey-wrapper">
+          <div stlye={{"marginLeft":"30px", "marginRight": "30px"}}>
             <TogglePriceType
               priceType={priceType}
               handlePriceTypeChange={handlePriceTypeChange}

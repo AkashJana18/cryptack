@@ -4,7 +4,6 @@
   gap: 0.5rem;
   width: 80vw;
   padding: 1rem;
-
 }
 
 .list-row:hover {
@@ -13,12 +12,15 @@
   transition: all 0.3s;
   cursor: pointer;
   padding: 1rem;
-
 }
+
+.list-row-light:hover {
+  background-color: #f5f5f5;
+}
+
 .td-image {
   width: 10% !important;
 }
-
 
 .mobile {
   display: none;
@@ -45,6 +47,10 @@
 .total-volume-list{
   text-align: right !important;
   color: var(--white) !important ;
+}
+
+.total-volume-list-light {
+  color: var(--black) !important
 }
 
 .td-info {
@@ -123,4 +129,8 @@
     height: 2rem !important;
     width: 2rem !important;
   }
+}
+
+.coin-symbol-light {
+  color: var(--black) !important;
 }

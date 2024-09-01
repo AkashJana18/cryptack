@@ -11,3 +11,7 @@
     overflow-y: hidden;
     overflow-x: hidden;
 }
+
+.loader-container-light {
+    background-color: var(--white);
+}

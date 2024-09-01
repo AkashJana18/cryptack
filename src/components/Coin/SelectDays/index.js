@@ -2,23 +2,25 @@ import React, { useState } from "react";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import "./style.css";
+import { useTheme } from "../../../context/ThemeContext";
 
 
 export default function SelectDays({days, handleDaysChange}) {
-
+  const {darkMode} = useTheme();
+  const priceTextStyle = darkMode ? "select-days" : "select-days select-days-light";
   return (
-    <div className="select-days">
+    <div className={priceTextStyle} style={{"marginLeft": "1rem"}}>
       <p>Price change in </p>
 
       <Select
         sx={{
           height: "2.5rem",
-          color: "var(--white)",
+          color: darkMode ? "var(--white)" : "var(--black)",
           "& .MuiOutlinedInput-notchedOutline": {
-            borderColor: "var(--white)",
+            borderColor: darkMode ? "var(--blue)" : "var(--blue)",
           },
           "& .MuiSvgIcon-root": {
-            color: "var(--white)",
+            color: darkMode ? "var(--white)" : "var(--black)",
           },
           "&:hover": {
             "&& fieldset": {
