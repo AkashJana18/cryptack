@@ -36,7 +36,7 @@ const Compare = () => {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [crypto1, crypto2, days, priceType]); // Add dependencies here   
 
   async function getData() {
     setIsLoading(true); 
@@ -60,26 +60,31 @@ const Compare = () => {
 
   const handleCoinChange = async (e, isCoin2) => {
     setIsLoading(true);
+    const newValue = e.target.value;
+    
     if (isCoin2) {
-      setCrypto2(e.target.value);
-      const data2 = await getCoinData(e.target.value);
+      setCrypto2(newValue);
+      const data2 = await getCoinData(newValue);
       if (data2) {
         coinObject(setCrypto2Data, data2);
       }
     } else {
-      setCrypto1(e.target.value);
-      const data1 = await getCoinData(e.target.value);
+      setCrypto1(newValue);
+      const data1 = await getCoinData(newValue);
       if (data1) {
         coinObject(setCrypto1Data, data1);
       }
     }
+  
     const prices1 = await getCoinPrices(crypto1, days, priceType);
     const prices2 = await getCoinPrices(crypto2, days, priceType);
+    
     if (prices1.length > 0 && prices2.length > 0) {
       settingChartData(setChartData, prices1, prices2);
       setIsLoading(false);
     }
   };
+  
 
   const handlePriceTypeChange = async (event, newType) => {
     setIsLoading(true);
@@ -120,11 +125,13 @@ const Compare = () => {
           }}>
             <List coin={crypto2Data} />
           </div>
-          <div style={{"marginLeft":"50px", "marginRight": "50px", "backgroundColor": "var(--darkgrey)"}}>
-            <TogglePriceType
-              priceType={priceType}
-              handlePriceTypeChange={handlePriceTypeChange}
-            />
+          <div style={{"marginLeft":"50px", "marginRight": "50px", "backgroundColor": "var(--darkgrey)", "padding": "2rem"}}>
+            <div>
+              <TogglePriceType
+                priceType={priceType}
+                handlePriceTypeChange={handlePriceTypeChange}
+              />
+            </div>
             <div>
               <LineChart
                 chartData={chartData}

@@ -4,6 +4,7 @@ import Drawer from "@mui/material/Drawer";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import { IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
+import Theme from '../Theme'
 
 export default function AnchorTemporaryDrawer() {
   const [open, setOpen] = React.useState(false);
@@ -27,8 +28,11 @@ export default function AnchorTemporaryDrawer() {
         <Link to="/dashboard">
           <p className="link">Dashboard</p>
         </Link>
+          <div style={{"backgroundColor": "var(--black)"}}>
+            <Theme />
+          </div>
         </div>
-      </Drawer>
+      </Drawer> 
     </div>
   );
 }
