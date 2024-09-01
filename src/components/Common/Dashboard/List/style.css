@@ -1,13 +1,15 @@
 .list-row {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  width: 80vw;
+  border-radius: 1rem;
+  gap: 5rem;
+  width: 90vw;
   padding: 1rem;
+  margin-top: 1rem;
 }
 
 .list-row:hover {
-  background-color: var(--darkgrey);
+  background-color: var(--darkgrey) !important;
   border-radius: 1rem;
   transition: all 0.3s;
   cursor: pointer;
@@ -15,6 +17,28 @@
 }
 
 .list-row-light:hover {
+  background-color: #f5f5f5 !important;
+}
+
+.list-row-static {
+  display: flex;
+  align-items: center;
+  border-radius: 1rem;
+  gap: 5rem;
+  width: 90vw;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: var(--darkgrey);
+}
+
+.list-row-static-light {
+  display: flex;
+  align-items: center;
+  border-radius: 1rem;
+  gap: 5rem;
+  width: 90vw;
+  padding: 1rem;
+  margin-top: 1rem;
   background-color: #f5f5f5;
 }
 

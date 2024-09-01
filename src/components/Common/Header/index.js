@@ -16,6 +16,7 @@ const Header = () => {
             Cryptack <span style={{color: "var(--blue)"}}>.</span>
         </h1>
         <div className="links">
+            <Theme/>
             <Link to="/">
                 <p className={linkStyles}>Home</p>
             </Link>
@@ -28,7 +29,6 @@ const Header = () => {
             <Link to="/dashboard">
                 <Button text={"Dashboard"} />
             </Link>
-            <Theme/>
         </div>
         <div className="drawer-component">
             <AnchorTemporaryDrawer />

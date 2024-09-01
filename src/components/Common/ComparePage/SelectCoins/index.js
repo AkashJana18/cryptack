@@ -3,18 +3,20 @@ import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import { get100Coins } from "../../../../functions/get100Coins";
 import "./style.css";
+import { useTheme } from '../../../../context/ThemeContext';
 
 export default function SelectCoins({ crypto1, crypto2, handleCoinChange }) {
   const [allCoins, setAllCoins] = useState([]);
-
+  const {darkMode} = useTheme();
+  const textStyle = darkMode ? "text" : "text-white";
   const style = {
     height: "2.5rem",
-    color: "var(--white)",
+    color: darkMode ? "var(--white)" : "var(--black)",
     "& .MuiOutlinedInput-notchedOutline": {
-      borderColor: "var(--white)",
+      borderColor: darkMode ? "var(--white)" : "var(--black)",
     },
     "& .MuiSvgIcon-root": {
-      color: "var(--white)",
+      color: darkMode ? "var(--white)" : "var(--black)",
     },
     "&:hover": {
       "&& fieldset": {
@@ -33,7 +35,7 @@ export default function SelectCoins({ crypto1, crypto2, handleCoinChange }) {
 
   return (
     <div className="select-coins">
-      <p>Crypto 1</p>
+      <p className={textStyle}>Crypto 1</p>
       <Select
         sx={style}
         value={crypto1}
@@ -49,7 +51,7 @@ export default function SelectCoins({ crypto1, crypto2, handleCoinChange }) {
           ))}
       </Select>
 
-      <p>Crypto 2</p>
+      <p className={textStyle}>Crypto 2</p>
       <Select
         sx={style}
         value={crypto2}

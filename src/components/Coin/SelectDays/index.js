@@ -17,7 +17,7 @@ export default function SelectDays({days, handleDaysChange}) {
           height: "2.5rem",
           color: darkMode ? "var(--white)" : "var(--black)",
           "& .MuiOutlinedInput-notchedOutline": {
-            borderColor: darkMode ? "var(--blue)" : "var(--blue)",
+            borderColor: darkMode ? "var(--white)" : "var(--black)",
           },
           "& .MuiSvgIcon-root": {
             color: darkMode ? "var(--white)" : "var(--black)",

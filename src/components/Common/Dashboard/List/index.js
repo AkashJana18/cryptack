@@ -7,9 +7,11 @@ import { Link } from "react-router-dom";
 import { convertNumber } from "../../../../functions/convertNumber";
 import { useTheme } from "../../../../context/ThemeContext";
 
-const List = ({ coin }) => {
+const List = ({ coin, hover = false }) => {
   const {darkMode} = useTheme();
-  const listRowStyles = darkMode ? "list-row" : "list-row list-row-light";
+  const listRowStyles = hover ? 
+        (darkMode ? "list-row" : "list-row list-row-light") : 
+        (darkMode ? "list-row-static" : "list-row-static-light");
   const totalVolumeStyles = darkMode ? "total-volume-list td-right-align" : "total-volume-list total-volume-list-light td-right-align";
   const coinSymbolStyles = darkMode ? "coin-symbol" : "coin-symbol coin-symbol-light";
   return (

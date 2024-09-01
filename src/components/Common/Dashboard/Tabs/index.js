@@ -43,7 +43,7 @@ export default function Tabs({ coins }) {
         <TabPanel value="list">
           <div className="list-table">
             {coins.map((coin, i) => {
-              return <List coin={coin} key={i} />;
+              return <List coin={coin} key={i} hover={true}/>;
             })}
           </div>
         </TabPanel>

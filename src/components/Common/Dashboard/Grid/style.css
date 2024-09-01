@@ -14,8 +14,8 @@
   transition: all .3s;
 }
 .grid-container-light {
-  background-color: var(--white);
-  border: 2px solid var(--black);
+  background-color: var(--lightgrey);
+  border: 2px solid var(--lightgrey);
 }
 
 .info-flex {

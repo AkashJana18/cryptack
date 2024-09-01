@@ -35,11 +35,11 @@
 
 
 .search-flex-light {
-    background-color: rgb(216, 216, 216);
+    background-color: var(--lightgrey);
 }
 
 .search-flex-light input {
-    background-color: rgb(216, 216, 216);
+    background-color: var(--lightgrey);
     color: var(--black);
 }
 
