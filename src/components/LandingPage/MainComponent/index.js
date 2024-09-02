@@ -10,7 +10,7 @@ import { useTheme } from "../../../context/ThemeContext";
 function MainComponent() {
   const {darkMode} = useTheme();
 
-  const heading1Styles = darkMode ? 'heading1' : 'heading1n heading1-light';
+  const heading1Styles = darkMode ? 'heading1' : 'heading1 heading1-light';
   return (
     <div className="main-flex">
       <div className="left-component">
@@ -49,7 +49,7 @@ function MainComponent() {
             <Link to="/dashboard">
                 <Button text={"Dashboard"} />
             </Link>
-            <Button text={"Share"} outLined={true} />
+            <Button text={"Share App"} outLined={true} />
           </motion.div>
         </div>
       </div>

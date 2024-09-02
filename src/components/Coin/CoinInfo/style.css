@@ -1,5 +1,6 @@
 .wrapper-dark {
-    padding: 0 40px;
+    display: flex 1;
+    padding: 5px 2rem;
     margin-top: 10px;
     border-radius: 20px;
     background-color: var(--darkgrey);
@@ -7,9 +8,11 @@
 }
 
 .wrapper-light {
-    padding: 0 20px;
+    display: flex 1;
+    padding: 5px 2rem;
     margin-top: 10px;
-    background-color: var(--white);
+    border-radius: 20px;
+    background-color: var(--lightgrey);
     color: black;
 }
 

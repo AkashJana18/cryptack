@@ -12,8 +12,9 @@ import { settingChartData } from "../functions/settingChartData";
 import LineChart from "../components/Coin/CoinChart";
 import TogglePriceType from "../components/Coin/PriceType";
 import Footer from "../components/Common/Footer";
+import { useTheme } from "../context/ThemeContext";
 
-const Compare = () => {
+const Compare = React.memo(() => {
   const [crypto1, setCrypto1] = useState("bitcoin");
   const [crypto2, setCrypto2] = useState("ethereum");
   const [days, setDays] = useState(30);
@@ -22,6 +23,7 @@ const Compare = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [priceType, setPriceType] = useState("prices");
   const [chartData, setChartData] = useState();
+  const {darkMode} = useTheme();
 
   const handleDaysChange = async (e) => {
     setIsLoading(true);
@@ -36,7 +38,7 @@ const Compare = () => {
 
   useEffect(() => {
     getData();
-  }, [crypto1, crypto2, days, priceType]); // Add dependencies here   
+  }, [crypto1, crypto2, days, priceType]); 
 
   async function getData() {
     setIsLoading(true); 
@@ -125,7 +127,12 @@ const Compare = () => {
           }}>
             <List coin={crypto2Data} />
           </div>
-          <div style={{"marginLeft":"50px", "marginRight": "50px", "backgroundColor": "var(--darkgrey)", "padding": "2rem"}}>
+          <div style={{ 
+            margin: "1rem 3rem", 
+            backgroundColor: darkMode ? "var(--darkgrey)" : "var(--lightgrey)", 
+            borderRadius: "20px",
+            padding: "1rem",
+          }}>
             <div>
               <TogglePriceType
                 priceType={priceType}
@@ -141,10 +148,10 @@ const Compare = () => {
             </div>
           </div>
 
-          <div className="grey-wrapper">
+          <div className="wrapper">
             <CoinInfo heading={crypto1Data.name} desc={crypto1Data.desc} />
           </div>
-          <div className="grey-wrapper">
+          <div className="wrapper">
             <CoinInfo heading={crypto2Data.name} desc={crypto2Data.desc} />
           </div>
         </>
@@ -152,6 +159,6 @@ const Compare = () => {
       <Footer />
     </div>
   );
-};
+});
 
 export default Compare;

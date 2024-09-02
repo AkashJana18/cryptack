@@ -21,8 +21,8 @@
   }
   
   .heading1-light {
-    font-size: 6rem;
     margin: 0;
+    align-self: center;
     color: var(--black);
   }
 
