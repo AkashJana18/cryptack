@@ -5,8 +5,24 @@
   padding: 1.5rem 3rem;
   position: sticky;
   top: 0;
-  background-color: var(--black);
   z-index: 1000;
+  background-color: var(--black);
+}
+
+.header-dark {
+  background-color: var(--black)
+}
+
+.header-dark h1 {
+  color: var(--white);
+}
+
+.header-light {
+  background-color: var(--white);
+}
+
+.header-light h1 {
+  color: var(--black);
 }
 
 .header h1 {
@@ -22,15 +38,27 @@
   gap: 1rem;
 }
 
-.link {
+.link-dark {
   font-size: 0.8rem;
   color: var(--grey);
   font-weight: 600;
   cursor: pointer;
 }
 
-.link:hover {
+.link-light {
+  font-size: 0.8rem;
+  color: var(--grey); 
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.link-dark:hover {
   color: var(--white);
+  transform: all 0.3s;
+}
+
+.link-light:hover {
+  color: var(--black);
   transform: all 0.3s;
 }
 

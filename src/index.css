@@ -9,6 +9,7 @@
   --darkgrey: #1b1b1b;
   --green: #61c96f;
   --red: #f94141;
+  --lightgrey: #f3f3f3;
 }
 
 html {
@@ -19,7 +20,6 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--black);
   color: var(--white);
   font-family: "Inter", sans-serif;
 
@@ -70,4 +70,11 @@ img {
   justify-content: start;
   align-items: center;
   gap: 1rem;
+}
+
+.wrapper {
+  display: block;
+  width: 92.5vw;
+  margin: 1rem auto !important;
+  border-radius: 1rem;
 }

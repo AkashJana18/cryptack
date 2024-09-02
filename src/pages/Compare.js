@@ -12,8 +12,9 @@ import { settingChartData } from "../functions/settingChartData";
 import LineChart from "../components/Coin/CoinChart";
 import TogglePriceType from "../components/Coin/PriceType";
 import Footer from "../components/Common/Footer";
+import { useTheme } from "../context/ThemeContext";
 
-const Compare = () => {
+const Compare = React.memo(() => {
   const [crypto1, setCrypto1] = useState("bitcoin");
   const [crypto2, setCrypto2] = useState("ethereum");
   const [days, setDays] = useState(30);
@@ -22,6 +23,7 @@ const Compare = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [priceType, setPriceType] = useState("prices");
   const [chartData, setChartData] = useState();
+  const {darkMode} = useTheme();
 
   const handleDaysChange = async (e) => {
     setIsLoading(true);
@@ -36,10 +38,10 @@ const Compare = () => {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [crypto1, crypto2, days, priceType]); 
 
   async function getData() {
-    setIsLoading(true);
+    setIsLoading(true); 
     const data1 = await getCoinData(crypto1);
     const data2 = await getCoinData(crypto2);
     if (data1) {
@@ -60,26 +62,31 @@ const Compare = () => {
 
   const handleCoinChange = async (e, isCoin2) => {
     setIsLoading(true);
+    const newValue = e.target.value;
+    
     if (isCoin2) {
-      setCrypto2(e.target.value);
-      const data2 = await getCoinData(e.target.value);
+      setCrypto2(newValue);
+      const data2 = await getCoinData(newValue);
       if (data2) {
         coinObject(setCrypto2Data, data2);
       }
     } else {
-      setCrypto1(e.target.value);
-      const data1 = await getCoinData(e.target.value);
+      setCrypto1(newValue);
+      const data1 = await getCoinData(newValue);
       if (data1) {
         coinObject(setCrypto1Data, data1);
       }
     }
+  
     const prices1 = await getCoinPrices(crypto1, days, priceType);
     const prices2 = await getCoinPrices(crypto2, days, priceType);
+    
     if (prices1.length > 0 && prices2.length > 0) {
       settingChartData(setChartData, prices1, prices2);
       setIsLoading(false);
     }
   };
+  
 
   const handlePriceTypeChange = async (event, newType) => {
     setIsLoading(true);
@@ -106,28 +113,45 @@ const Compare = () => {
             />
             <SelectDays days={days} handleDaysChange={handleDaysChange} />
           </div>
-          <div className="grey-wrapper">
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
             <List coin={crypto1Data} />
           </div>
-          <div className="grey-wrapper">
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
             <List coin={crypto2Data} />
           </div>
-          <div className="grey-wrapper">
-            <TogglePriceType
-              priceType={priceType}
-              handlePriceTypeChange={handlePriceTypeChange}
-            />
-            <LineChart
-              chartData={chartData}
-              priceType={priceType}
-              multiAxis={true}
-            />
+          <div style={{ 
+            margin: "1rem 3rem", 
+            backgroundColor: darkMode ? "var(--darkgrey)" : "var(--lightgrey)", 
+            borderRadius: "20px",
+            padding: "1rem",
+          }}>
+            <div>
+              <TogglePriceType
+                priceType={priceType}
+                handlePriceTypeChange={handlePriceTypeChange}
+              />
+            </div>
+            <div>
+              <LineChart
+                chartData={chartData}
+                priceType={priceType}
+                multiAxis={true}
+              />
+            </div>
           </div>
 
-          <div className="grey-wrapper">
+          <div className="wrapper">
             <CoinInfo heading={crypto1Data.name} desc={crypto1Data.desc} />
           </div>
-          <div className="grey-wrapper">
+          <div className="wrapper">
             <CoinInfo heading={crypto2Data.name} desc={crypto2Data.desc} />
           </div>
         </>
@@ -135,6 +159,6 @@ const Compare = () => {
       <Footer />
     </div>
   );
-};
+});
 
 export default Compare;

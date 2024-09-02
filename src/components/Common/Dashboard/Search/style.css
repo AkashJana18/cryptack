@@ -5,7 +5,6 @@
     gap: 1.5rem;
     padding: 1rem 3rem;
     color: var(--grey);
-    background-color: var(--darkgrey);
     width: 80%;
     margin: 1rem;
     border-radius: 3rem;
@@ -14,11 +13,9 @@
 }
 
 .search-flex input {
-    background-color: var(--darkgrey);
     width: 100%; 
     font-family: "Inter";
     font-size: 1.2rem;
-    color: var(--grey);
     border: none;
 
 }
@@ -26,3 +23,23 @@
 .search-flex input:focus {
     outline: none;
 }
+
+.search-flex-dark {
+    background-color: var(--darkgrey);
+}
+
+.search-flex-dark input {
+    background-color: var(--darkgrey);
+    color: var(--grey);
+}
+
+
+.search-flex-light {
+    background-color: var(--lightgrey);
+}
+
+.search-flex-light input {
+    background-color: var(--lightgrey);
+    color: var(--black);
+}
+

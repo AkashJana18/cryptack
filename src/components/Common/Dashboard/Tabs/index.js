@@ -6,16 +6,17 @@ import TabPanel from "@mui/lab/TabPanel";
 import Grid from "../Grid";
 import "./style.css";
 import List from "../List";
+import { useTheme } from "../../../../context/ThemeContext";
 
 export default function Tabs({ coins }) {
   const [value, setValue] = React.useState("grid");
-
+  const {darkMode} = useTheme();
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
+  const tabColorStyle = darkMode ? "var(--white)" : "var(--black)";
   const style = {
-    color: "var(--white)",
+    color: tabColorStyle,
     "& .Mui-selected": {
       color: "var(--blue) !important",
     },
@@ -42,7 +43,7 @@ export default function Tabs({ coins }) {
         <TabPanel value="list">
           <div className="list-table">
             {coins.map((coin, i) => {
-              return <List coin={coin} key={i} />;
+              return <List coin={coin} key={i} hover={true}/>;
             })}
           </div>
         </TabPanel>

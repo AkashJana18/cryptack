@@ -6,10 +6,13 @@ import DashboardPage from './pages/Dashboard';
 import Compare from './pages/Compare';
 import WatchlistPage from './pages/Watchlist';
 import CoinPage from './pages/Coin';
+import { useTheme } from './context/ThemeContext';
 
 function App() {
+  const {darkMode, _} = useTheme();
+  const background = darkMode ? 'App theme-dark' : 'App theme-light';
   return (
-    <div className="App">
+    <div className={background}>
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />

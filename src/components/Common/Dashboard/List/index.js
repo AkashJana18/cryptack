@@ -5,13 +5,19 @@ import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDownRounded";
 import { Tooltip } from "@mui/material";
 import { Link } from "react-router-dom";
 import { convertNumber } from "../../../../functions/convertNumber";
-import { motion } from "framer-motion";
+import { useTheme } from "../../../../context/ThemeContext";
 
-const List = ({ coin }) => {
+const List = ({ coin, hover = false }) => {
+  const {darkMode} = useTheme();
+  const listRowStyles = hover ? 
+        (darkMode ? "list-row" : "list-row list-row-light") : 
+        (darkMode ? "list-row-static" : "list-row-static-light");
+  const totalVolumeStyles = darkMode ? "total-volume-list td-right-align" : "total-volume-list total-volume-list-light td-right-align";
+  const coinSymbolStyles = darkMode ? "coin-symbol" : "coin-symbol coin-symbol-light";
   return (
     <table>
       <tbody>
-        <tr className="list-row">
+        <tr className={listRowStyles}>
           <Tooltip title="Logo">
             <td className="td-image">
               <Link to={`/coin/${coin.id}`}>
@@ -22,7 +28,7 @@ const List = ({ coin }) => {
           <Tooltip title="Coin Name">
             <td className="td-info">
               <Link to={`/coin/${coin.id}`}>
-                <p className="coin-symbol">{coin.symbol}</p>
+                <p className={coinSymbolStyles}>{coin.symbol}</p>
                 <p className="coin-name">{coin.name}</p>
               </Link>
             </td>
@@ -77,7 +83,7 @@ const List = ({ coin }) => {
           <Tooltip title="Total Volume">
             <td>
               <Link to={`/coin/${coin.id}`}>
-                <p className="total-volume-list td-right-align">
+                <p className={totalVolumeStyles}>
                   {coin.total_volume.toLocaleString()}
                 </p>
                 <p className="mobile">{convertNumber(coin.total_volume)}</p>
@@ -87,7 +93,7 @@ const List = ({ coin }) => {
           <Tooltip title="Market Cap">
             <td>
               <Link to={`/coin/${coin.id}`}>
-                <p className="total-volume-list td-right-align">
+                <p className={totalVolumeStyles}>
                   ${coin.market_cap.toLocaleString()}
                 </p>
                 <p className="mobile">${convertNumber(coin.market_cap)}</p>

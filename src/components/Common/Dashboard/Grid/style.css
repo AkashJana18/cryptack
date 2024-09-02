@@ -5,11 +5,25 @@
   border-radius: 1rem;
   cursor: pointer;
 }
+.grid-container:hover {
+  border-color: var(--green);
+  transition: all .3s;
+}
+.grid-container-red:hover {
+  border-color: var(--red) !important;
+  transition: all .3s;
+}
+.grid-container-light {
+  background-color: var(--lightgrey);
+  border: 2px solid var(--lightgrey);
+}
+
 .info-flex {
   display: flex;
   gap: 1rem;
   margin: 1rem 1.5rem;
 }
+
 .name-col {
   display: flex;
   flex-direction: column;
@@ -17,6 +31,7 @@
   align-content: center;
   margin-top: .5rem;
 }
+
 .coin-logo {
   height: 3rem;
   width: 3rem;
@@ -34,6 +49,10 @@
   text-transform: uppercase;
   font-weight: 600;
   margin: 0rem;
+}
+
+.coin-symbol-light {
+  color: var(--black);
 }
 .chip-flex {
   display: flex;
@@ -99,11 +118,6 @@
   font-weight: 500;
 }
 
-.grid-container:hover {
-  border-color: var(--green);
-  transition: all .3s;
-}
-.grid-container-red:hover {
-  border-color: var(--red) !important;
-  transition: all .3s;
+.total-volume-light {
+  color: var(--black);
 }

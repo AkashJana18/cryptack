@@ -1,14 +1,17 @@
 import React from "react";
 import Pagination from "@mui/material/Pagination";
 import "./style.css";
+import { useTheme } from "../../../../context/ThemeContext";
 
 export default function ({ page, handlePageChange }) {
+  const {darkMode} = useTheme();
+  const colorStyle = darkMode ? "#fff" : "#000";
   return (
     <div className="pagination-div">
       <Pagination
         sx={{
           "& .MuiPaginationItem-text": {
-            color: "#fff !important",
+            color: `${colorStyle} !important`,
             border: "1px solid var(--grey)",
           },
           "& .MuiPaginationItem-text:hover": {

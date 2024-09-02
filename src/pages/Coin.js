@@ -12,6 +12,7 @@ import SelectDays from "../components/Coin/SelectDays";
 import { settingChartData } from "../functions/settingChartData";
 import TogglePriceType from "../components/Coin/PriceType";
 import Footer from "../components/Common/Footer";
+import { useTheme } from "../context/ThemeContext";
 
 const CoinPage = () => {
   const { id } = useParams();
@@ -20,7 +21,7 @@ const CoinPage = () => {
   const [days, setDays] = useState(30);
   const [chartData, setChartData] = useState();
   const [priceType, setPriceType] = useState("prices");
-
+  const {darkMode} = useTheme();
   const handlePriceTypeChange = async (event, newType) => {
     setIsLoading(true);
     setPriceType(newType);
@@ -68,15 +69,21 @@ const CoinPage = () => {
         <Loader />
       ) : (
         <>
-          <div className="grey-wrapper">
+          <div style={{"display": "flex", "justifyContent": "center"}}>
             <List coin={coinData} />
           </div>
-          <div className="grey-wrapper">
+          <div style={{ 
+            margin: "1rem 3rem", 
+            backgroundColor: darkMode ? "var(--darkgrey)" : "var(--lightgrey)", 
+            borderRadius: "20px",
+            padding: "1rem",
+          }}>
             <SelectDays days={days} handleDaysChange={handleDaysChange} />
             <TogglePriceType priceType={priceType} handlePriceTypeChange={handlePriceTypeChange}/>
             <LineChart chartData={chartData} />
           </div>
-          <div className="grey-wrapper">
+
+          <div className="wrapper">
             <CoinInfo heading={coinData.name} desc={coinData.desc} />
           </div>
         </>

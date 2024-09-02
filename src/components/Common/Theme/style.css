@@ -1,0 +1,27 @@
+.dark-mode {
+    background-color: black;
+    padding: 0.45rem 1.5rem;
+    border-radius: 3rem;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+    cursor: pointer;
+    border: 2px solid white;
+    text-align: center;
+    min-width: 80px;
+    color: white;
+}
+
+.light-mode{
+    background-color: white;
+    padding: 0.45rem 1.5rem;
+    border-radius: 3rem;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+    cursor: pointer;
+    border: 2px solid rgb(107, 103, 103);
+    text-align: center;
+    min-width: 80px;
+    color: black;
+}

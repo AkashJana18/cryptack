@@ -20,9 +20,22 @@
     margin: 0;
   }
   
+  .heading1-light {
+    margin: 0;
+    align-self: center;
+    color: var(--black);
+  }
+
   .heading1:hover {
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: var(--white);
+    color: var(--white);
+    transition: all 0.3s;
+  }
+
+  .heading1-light:hover {
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: var(--black);
     color: var(--black);
     transition: all 0.3s;
   }
@@ -129,4 +142,3 @@
       left: -30px;
     }
   }
-  

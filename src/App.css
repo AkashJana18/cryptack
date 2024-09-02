@@ -1,0 +1,9 @@
+.theme-dark {
+    background-color: var(--black);
+    overflow-y: hidden;
+}
+
+.theme-light {
+    background-color: white;
+    overflow-y: hidden;
+}
