@@ -29,14 +29,14 @@
   .heading1:hover {
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: var(--white);
-    color: var(--white);
+    color: var(--black);
     transition: all 0.3s;
   }
 
   .heading1-light:hover {
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: var(--black);
-    color: var(--black);
+    color: var(--white);
     transition: all 0.3s;
   }
   
